@@ -310,7 +310,7 @@ I'm going to use exponential decrease as it usualy shows better results for Trav
 >>
 >> else:
 >>
->>> accept the neighbouring state with the probability$P = e^{-ΔC/T}$, where `ΔC` is the change in cost
+>>> accept the neighbouring state with the probability $P = e^{-ΔC/T}$, where `ΔC` is the change in cost
 >>>
 >>
 >> cool the Temperature (T) exponentially as described in **Cooling**
