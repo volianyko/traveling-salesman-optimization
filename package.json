@@ -1,0 +1,16 @@
+{
+  "name": "git-fundamentals-playground-voliaanyk",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/SGA482Da) # :wave: The Basics of GitHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "graphology": "^0.25.4",
+    "sigma": "^3.0.0-beta.6"
+  }
+}
