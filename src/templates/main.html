@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tsp</title>
+
+    <link rel="stylesheet" href="../static/css/main.min.css">
+    <script src="../static/js/graph-manipulation.js"></script>
+    <script src="../static/js/display-output.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <p class="text-center fs-3 fw-bold hm">travelling salesman problem</p>
+
+    <div class="input-graph-div div-flex">
+      <div class="input">
+
+        <div class="cities div-flex">
+          <label for="cities-input" class="form-label">cities</label>
+          <input class="form-control form-control-sm" type="text" id="cities-input" value="">
+          <button type="button" class="btn btn-outline-primary btn-sm" id="btn-generate">generate</button>
+          <button type="button" class="btn btn-outline-primary btn-sm btn-clear" id="btn-clear">clear</button>
+        </div>
+
+        <div class = "speed div-flex">
+          <label for="speed-input" class="form-label">speed</label>
+          <input type="range" class="form-range" id="speed-input">
+        </div>
+
+        <div class = "radio">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio" id="show-iterations" checked>
+            <label class="form-check-label" for="show-iterations">
+              show iterations
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio" id="fast-forward">
+            <label class="form-check-label" for="fast-forward">
+              fast forward
+            </label>
+          </div>
+        </div>
+
+        <div class="start-stop">
+          <button type="button" class="btn btn-primary btn-sm btn-start">start</button>
+          <button type="button" class="btn btn-primary btn-sm btn-stop">stop</button>
+          <button type="button" class="btn btn-primary btn-sm btn-clear-paths">clear paths</button>
+        </div>
+
+
+        <div class="accordion accordition-params">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#parameters-aco" aria-expanded="false" aria-controls="parameters-aco">
+                ant colony optimisation
+              </button>
+            </h2>
+            <div id="parameters-aco" class="accordion-collapse collapse aco-color-div">
+              <div class="accordion-body">
+
+                <div class="iterations-aco div-flex">
+                  <label for="iterations-aco-input" class="form-label">iterations</label>
+                  <input class="form-control form-control-sm" type="text" id="iterations-aco-input" value="100">
+                </div>
+
+                <div class="ants div-flex">
+                  <label for="ants-input" class="form-label">ants</label>
+                  <input class="form-control form-control-sm" type="text" id="ants-input" value="10">
+
+                  <label for="Q-input" class="form-label">Q</label>
+                  <input class="form-control form-control-sm" type="text" id="Q-input" value="100">
+                </div>
+
+                <div class="alpha-beta div-flex">
+                  <label for="alpha-input" class="form-label">alpha</label>
+                  <input class="form-control form-control-sm" type="text" id="alpha-input" value="1">
+
+                  <label for="beta-input" class="form-label">beta</label>
+                  <input class="form-control form-control-sm" type="text" id="beta-input" value="5">
+                </div>
+
+                <div class="e-rate div-flex">
+                  <label for="e-rate-input" class="form-label">evaporation_rate</label>
+                  <input class="form-control form-control-sm" type="text" id="e-rate-input" value="0.5">
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#parameters-sa" aria-expanded="false" aria-controls="parameters-sa">
+                simulated annealing
+              </button>
+            </h2>
+            <div id="parameters-sa" class="accordion-collapse collapse sa-color-div">
+              <div class="accordion-body">
+
+                <div class="iterations-sa div-flex">
+                  <label for="iterations-sa-input" class="form-label">iterations</label>
+                  <input class="form-control form-control-sm" type="text" id="iterations-sa-input" value="1000">
+                </div>
+
+                <div class="temperarture div-flex">
+                  <label for="t-input" class="form-label">T</label>
+                  <input class="form-control form-control-sm" type="text" id="t-input" value="1000">
+
+                  <label for="ed-input" class="form-label">alpha</label>
+                  <input class="form-control form-control-sm" type="text" id="ed-input" value="0.95">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="graph-output-div">
+
+        <div class="graph-div" id="graph-div">
+          <p></p>
+        </div>
+
+        <div class="output-div div-flex">
+          <div class="iteration-output-div">
+            <p class="fs-7 fw-bold" id="iteration-text">Iteration: <span id="iteration-number">0</span></p>
+          </div>
+          <div class="aco-output-div">
+            <p class="fs-7 fw-bold">Ant Colony Optimisation: <span id="aco-value">0</span></p>
+            <p>found: <span id="aco-found">0</span></p>
+            <div class="form-check hide">
+              <input class="form-check-input hide" type="checkbox" value="" id="aco-hide">
+              <label class="form-check-label hide" for="aco-hide">
+                hide
+              </label>
+            </div>
+          </div>
+          <div class="sa-output-div">
+            <p class="fs-7 fw-bold">Simulated Annealing: <span id="sa-value">0</span></p>
+            <p>found: <span id="sa-found">0</span></p>
+            <div class="form-check hide">
+              <input class="form-check-input hide" type="checkbox" value="" id="sa-hide">
+              <label class="form-check-label hide" for="sa-hide">
+                hide
+              </label>
+            </div>
+          </div>
+          <div class="hk-output-div">
+            <p class="fs-7 fw-bold">Held-Karp: <span id="hk-value">0</span></p>
+            <div class="form-check hide">
+              <input class="form-check-input hide" type="checkbox" value="" id="hk-hide">
+              <label class="form-check-label hide" for="hk-hide">
+                hide
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>         
+</html>

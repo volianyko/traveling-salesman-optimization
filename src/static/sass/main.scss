@@ -1,0 +1,121 @@
+$body-bg: #11001E;
+$body-color: #7511a3;
+$primary: #A600F3;
+$aco-color: #c3448e;
+$sa-color: #d79840;
+$hk-color: #2858b9;
+$grey: #6e6e6e;
+
+$form-range-track-width: 50%;
+$accordion-border-color: $body-bg;
+$accordion-button-active-bg: $body-bg;
+$accordion-button-active-color: #d680fd;
+$accordion-padding-x: 0;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.hm{
+    margin-top: $spacer*1.5 !important;
+    margin-bottom: $spacer*.25 !important;
+}
+
+.form-range{
+    margin-left: $spacer*.8;
+}
+.cities{
+    margin-bottom: $spacer*1;
+}
+.form-control{
+    margin-left: $spacer*.8;
+    margin-right: $spacer*1.2;
+}
+.input{
+    margin-left: $spacer*2;
+    width: 25%;
+}
+.radio{
+    margin-top: $spacer*1;
+}
+.start-stop{
+    margin-top: $spacer*1;
+}
+.btn-stop{
+    margin-left: $spacer*.8;
+    margin-right: $spacer*.8;
+}
+
+.accordition-params{
+    margin-top: $spacer*.8;
+}
+.div-flex{
+    display: flex !important;
+    margin-top: $spacer;
+}
+.btn-clear{
+    margin-left: $spacer;
+}
+.graph-output-div{
+    margin-left: $spacer*2;
+    margin-right: $spacer*2;
+    width: 100%;
+}
+.graph-div{
+    background-color: $body-bg;
+    height: $spacer*35;
+    margin-top: $spacer;
+    margin-left: $spacer;
+    margin-right: $spacer;
+    margin-bottom: $spacer*1.5;
+    box-shadow: inset 0 0 10px;
+}
+.output-div{
+    margin-top: $spacer;
+    justify-content: space-between;
+    margin-left: $spacer;
+    margin-right: $spacer*3;
+}
+.aco-output-div{
+    color: $aco-color;
+}
+.sa-output-div{
+    color: $sa-color;
+}
+.hk-output-div{
+    color: $hk-color;
+}
+.hide{
+    color: $grey;
+}
+.aco-color-div{
+    color: $aco-color;
+}
+.sa-color-div{
+    color: $sa-color;
+}
+.node{
+    border-radius: 50%;
+    width: $spacer*.7;
+    height: $spacer*.7;
+    position: absolute;
+    background-color: $primary;
+    cursor: grab;
+    z-index: 3;
+}
+
+.arc{
+    position:absolute;
+    height: $spacer*.1;
+
+}
+.aco-path{
+    background-color: $aco-color;
+    z-index: 1;
+}
+.sa-path{
+    background-color: $sa-color;
+    z-index: 1;
+}
+.hk-path{
+    background-color: $hk-color;
+    z-index: 2;
+}

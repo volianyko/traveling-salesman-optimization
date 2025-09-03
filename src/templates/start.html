@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tsp</title>
+    <link rel="stylesheet" href="../static/css/start.min.css">    
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    
+    <p class="text-center fs-1 fw-bold hm">travelling salesman problem</p>
+    <p class="text-center fs-4 fw-light">ant colony optimization <b>vs</b> simulated annealing</p>
+
+    <img src = "{{ url_for('static', filename='images/start_page.jpg') }}" class="img-fluid" alt="image">
+
+    <div class="text-center">
+      <a href="{{ url_for('main') }}"><button type="button" class="btn btn-outline-primary">start</button></a>
+    </div>
+  </body>
+</html>

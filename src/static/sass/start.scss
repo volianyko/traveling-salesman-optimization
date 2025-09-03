@@ -1,0 +1,11 @@
+$body-bg: #11001E;
+$body-color: #7511a3;
+$primary: #A600F3;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.hm{
+    margin-top: $spacer*1.5 !important;
+    margin-bottom: $spacer*.25 !important;
+    color: #A600F3 !important;
+}
